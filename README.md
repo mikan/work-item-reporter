@@ -43,6 +43,11 @@ Generate weekly report of Azure DevOps Work Items.
 > 
 > ● [agile3] 🐞51: Sample Bug / 0
 
+Format:
+
+- each headers: `===== header / total-effort =====`
+- each items: `[project] number: title / effort`
+
 ## Prerequisites
 
 - Azure Boards Query UUIDs (shown in browser address bar)
