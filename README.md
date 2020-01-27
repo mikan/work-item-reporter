@@ -52,15 +52,10 @@ Format:
 
 - Azure Boards Query UUIDs (shown in browser address bar)
     - My to-do items
-        - `State` = `Accepted`
-        - Or `State` = `Ready`
-        - Or `State` = `Approved`
+        - `State` In `New,Open,Accepted,Ready,Approved,To Do`
         - And `Assigned To` = `(YOU)`
     - My doing items
-        - `State` = `Committed`
-        - Or `State` = `Doing`
-        - Or `State` = `In Progress`
-        - Or `State` = `Active`
+        - `State` In `Committed,Doing,In Progress,Doing,Active`
         - And `Assigned To` = `(YOU)`
     - My done items last week
         - `Closed Date` >= `@StartOfDay('-7d')`
