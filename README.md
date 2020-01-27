@@ -6,23 +6,41 @@ Generate weekly report of Azure DevOps Work Items.
 
 > *mikan's Weekly Report*
 > 
+> 
 > *===== To-Do / 16 =====*
+> 
 > ● [scrum1] 📘27: Sample Product Backlog Item / 8
+> 
 > ● [scrum1] 📘33: Sample Product Backlog Item / 8
+> 
 > *===== DOING / 0 =====*
+> 
 > ● [agile2] 📘3: Sample User Story / 0
+> 
 > ● [scrum1] 🏆21: Sample Epic / 0
+> 
 > ● [scrum1] 🏆37: Sample Epic / 0
+> 
 > ● [agile2] 📋43: Sample Task / 0
+> 
 > *===== DONE / 50 =====*
+> 
 > ● [scrum1] 📘4: Sample Product Backlog Item / 16
+> 
 > ● [scrum1] 🏆19: Sample Epic / 0
+> 
 > ● [scrum1] 📘26: Sample Product Backlog Item / 5
+> 
 > ● [scrum1] 📘28: Sample Product Backlog Item / 8
+> 
 > ● [scrum1] 📘29: Sample Product Backlog Item / 13
+> 
 > ● [scrum1] 📘32: Sample Product Backlog Item / 8
+> 
 > ● [agile3] 🐞39: Sample Bug / 0
+> 
 > ● [agile2] 📋40: Sample Task / 0
+> 
 > ● [agile3] 🐞51: Sample Bug / 0
 
 ## Prerequisites
