@@ -139,7 +139,12 @@ func query(client workitemtracking.Client, ctx context.Context, queryID string) 
 		}
 		effort, ok := (*wi.Fields)["Microsoft.VSTS.Scheduling.Effort"]
 		if !ok {
-			effort = 0.0
+			sp, ok := (*wi.Fields)["Microsoft.VSTS.Scheduling.StoryPoints"]
+			if !ok {
+				effort = 0.0
+			} else {
+				effort = sp
+			}
 		}
 		list = append(list, printItem{
 			ID:      *wi.Id,
