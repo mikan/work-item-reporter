@@ -137,13 +137,18 @@ func query(client workitemtracking.Client, ctx context.Context, queryID string) 
 		if err != nil {
 			return nil, err
 		}
-		effort, ok := (*wi.Fields)["Microsoft.VSTS.Scheduling.Effort"]
-		if !ok {
-			sp, ok := (*wi.Fields)["Microsoft.VSTS.Scheduling.StoryPoints"]
-			if !ok {
-				effort = 0.0
-			} else {
-				effort = sp
+		var effort float64
+		if v, ok := (*wi.Fields)["Microsoft.VSTS.Scheduling.Effort"]; ok {
+			effort = v.(float64)
+		}
+		if effort == 0 {
+			if v, ok := (*wi.Fields)["Microsoft.VSTS.Scheduling.StoryPoints"]; ok {
+				effort = v.(float64)
+			}
+		}
+		if effort == 0 {
+			if v, ok := (*wi.Fields)["Microsoft.VSTS.Scheduling.OriginalEstimate"]; ok {
+				effort = v.(float64)
 			}
 		}
 		list = append(list, printItem{
@@ -151,7 +156,7 @@ func query(client workitemtracking.Client, ctx context.Context, queryID string) 
 			Project: (*wi.Fields)["System.TeamProject"].(string),
 			Type:    (*wi.Fields)["System.WorkItemType"].(string),
 			Title:   (*wi.Fields)["System.Title"].(string),
-			Effort:  effort.(float64),
+			Effort:  effort,
 		})
 	}
 	return list, nil
